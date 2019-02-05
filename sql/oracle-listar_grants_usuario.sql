@@ -10,10 +10,13 @@ from (
     grantee
   FROM DBA_TAB_PRIVS 
   WHERE 
-    GRANTEE = 'USER'
+    GRANTEE = 'APP_SCI'
   group by 
     owner,
     table_name, 
     grantee
+  order by 
+    owner,
+    table_name
 )
 ;
